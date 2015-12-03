@@ -33,5 +33,11 @@ class PgSQL {
         }
         return $result;
     }
-
+    /*
+    test:
+    echo arrayToPgValuesList([[
+        "a"=>1,    
+        "n"=>2    
+    ]], "hoge");
+    */
 }
