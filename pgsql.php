@@ -14,7 +14,7 @@ class PgSQL {
     {
         $result = "";
         if (!empty($array[0])) {
-            $result = "VALUES ";
+            $result = "(VALUES ";
             // 一番最初の要素から key 名を取得
             $keyList = array_keys($array[0]);
 
@@ -29,7 +29,7 @@ class PgSQL {
 
             // 最後の文字を削る
             $result = substr($result, 0, -1);
-            $result .= " as ${tblName} (". implode(",", $keyList) .")";
+            $result .= ") as ${tblName} (". implode(",", $keyList) .")";
         }
         return $result;
     }
